@@ -10,12 +10,16 @@
   <div class="container">
     <div id="floating-tab">
       <h1>CLICK HERE TO OPEN MESSAGE</h1>
-      <button onclick="showMessage()">Open</button>
+      <button onclick="showOptions()">Open</button>
     </div>
 
     <div id="message-box" class="hidden">
-      <h2>Will you be my valentine jagi?? 💕 (-Kael/Mingyu)</h2>
-      <img src="images/mingyu.jpg" alt="Your Custom Image">
+      <h2>Will You Be My Valentine? 💕</h2>
+      <div id="options" class="hidden">
+        <p>Choose an option:</p>
+        <button onclick="confirmYes()">Yes</button>
+        <button onclick="confirmYes()">Yes</button>
+      </div>
     </div>
   </div>
 
@@ -24,32 +28,19 @@
 
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script>
-    function showMessage() {
-      // Show message box
-      document.getElementById('message-box').classList.remove('hidden');
+    function showOptions() {
       document.getElementById('floating-tab').style.display = 'none';
+      document.getElementById('message-box').classList.remove('hidden');
+      document.getElementById('options').classList.remove('hidden');
+    }
 
-      // Launch confetti
+    function confirmYes() {
+      alert("Message Qylle Quino for further details. 💖");
       confetti({
         particleCount: 100,
         spread: 70,
         origin: { y: 0.6 },
       });
-
-      // Simulate balloons (just for fun!)
-      for (let i = 0; i < 10; i++) {
-        setTimeout(() => {
-          confetti({
-            particleCount: 1,
-            angle: 90,
-            spread: 90,
-            startVelocity: 30,
-            origin: { x: Math.random(), y: Math.random() + 1.2 },
-            colors: ['#FF4D4D', '#FF80B0', '#FFD1DC'],
-            shapes: ['circle'],
-          });
-        }, i * 200);
-      }
     }
   </script>
 </body>
