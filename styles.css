@@ -1,48 +1,74 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #ffe6e6;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ffe6e6, #ffd1dc);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+}
+
+#floating-tab {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: float 3s infinite;
+}
+
+#floating-tab h1 {
+  font-size: 1.5rem;
+  color: #ff4d4d;
+}
+
+button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e60000;
+}
+
+#message-box {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#message-box h2 {
+  font-size: 2rem;
+  color: #ff4d4d;
+}
+
+#message-box img {
+  margin-top: 10px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Floating animation for the tab */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
   }
-  
-  .container {
-    padding: 20px;
+  50% {
+    transform: translateY(-10px);
   }
-  
-  h1 {
-    font-size: 2rem;
-    color: #ff4d4d;
-  }
-  
-  button {
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #e60000;
-  }
-  
-  #message-box {
-    margin-top: 20px;
-    font-size: 1.5rem;
-    color: #ff4d4d;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  img {
-    margin-top: 10px;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
+}
